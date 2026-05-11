@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+  
+  --color-brand-bg: #F5F2ED;
+  --color-brand-ink: #1A1A1A;
+  --color-brand-accent: #7D6B5D;
+  --color-brand-white: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-ink font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.glass {
+  @apply bg-brand-white/80 backdrop-blur-md border-b border-brand-ink/5;
+}
+
+.btn-primary {
+  @apply bg-brand-ink text-brand-bg px-8 py-3 rounded-none transition-all duration-500 hover:bg-brand-accent tracking-[0.2em] uppercase text-[10px] font-bold;
+}
+
+.btn-accent {
+  @apply bg-brand-accent text-brand-white px-8 py-3 rounded-full transition-all duration-500 hover:opacity-90 tracking-[0.1em] uppercase text-[11px] font-bold;
+}
+
+.section-padding {
+  @apply py-32 px-6 md:px-12 lg:px-24;
+}
+
+.card-luxury {
+  @apply bg-white p-8 rounded-[2px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-brand-ink/5 transition-all duration-500 hover:-translate-y-1;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
